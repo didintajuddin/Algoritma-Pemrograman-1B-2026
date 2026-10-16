@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Soal 1"/>
+        <attribute name="authors" value="lenovo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-07 08:09:57 PM"/>
+        <attribute name="created" value="bGVub3ZvO0RFU0tUT1AtNDVPVVY0QjsyMDI2LTEwLTA3OzA2OjUzOjUzIFBNOzI5OTk="/>
+        <attribute name="edited" value="bGVub3ZvO0RFU0tUT1AtNDVPVVY0QjsyMDI2LTEwLTA3OzA4OjA5OjU3IFBNOzE7MzExNA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="kode, digit1, digit2, digit3, PelacakAwal, PelacakTahap1, PelacakAkhir" type="Integer" array="False" size=""/>
+            <output expression="&quot;masukan digit1:&quot;" newline="True"/>
+            <input variable="digit1"/>
+            <output expression="&quot;masukan digit2:&quot;" newline="True"/>
+            <input variable="digit2"/>
+            <output expression="&quot;masukan digit3:&quot;" newline="True"/>
+            <input variable="digit3"/>
+            <output expression="&quot;Nilai Semua Digit: &quot; &amp; digit1 &amp; digit2 &amp; digit3" newline="True"/>
+            <assign variable="PelacakAwal" expression="digit1*digit3"/>
+            <output expression="&quot;Nilai Pelacak Awal: &quot;&amp; PelacakAwal" newline="True"/>
+            <if expression="digit2%2=0">
+                <then>
+                    <assign variable="PelacakTahap1" expression="PelacakAwal+25"/>
+                </then>
+                <else>
+                    <assign variable="PelacakTahap1" expression="PelacakAwal-digit2"/>
+                </else>
+            </if>
+            <output expression="&quot;Nilai Pelacak Tahap 1: &quot; &amp; PelacakTahap1" newline="True"/>
+            <if expression="PelacakTahap1 % 3 = 0">
+                <then>
+                    <assign variable="PelacakAkhir" expression="PelacakTahap1 / 3"/>
+                </then>
+                <else>
+                    <assign variable="PelacakAkhir" expression="PelacakTahap1 * 2"/>
+                </else>
+            </if>
+            <output expression="&quot;Nilai pelacak Akhir: &quot;&amp; PelacakAkhir" newline="True"/>
+            <if expression="PelacakAkhir &gt; 50">
+                <then>
+                    <output expression="&quot;Kategori A&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="PelacakAkhir &gt; 20">
+                        <then>
+                            <output expression="&quot;Kategori B&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Password Ditolak !&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <if expression="PelacakAkhir % 2 = 0">
+                <then>
+                    <output expression="&quot;Siklus Genap&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Siklus Ganjil&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
